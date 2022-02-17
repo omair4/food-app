@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper{
+  background-image: url('../../istockphoto-1198380802-612x612.jpg');
+}

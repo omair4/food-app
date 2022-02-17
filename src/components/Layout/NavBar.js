@@ -1,19 +1,16 @@
-import { Nav, Navbar, Container, Button } from "react-bootstrap";
+import { Nav, Navbar, Container} from "react-bootstrap";
 // import Navbar from "react-bootstrap/Navbar";
-
-const NavBar = () => {
+import CartButton from "./CartButton";
+const NavBar = (props) => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">React-Meals</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav>
+          <Nav className="me-auto"></Nav>
           <Nav>
-            <Button>Cart</Button>
+            <CartButton cartItems={props.cartItems}></CartButton>
           </Nav>
         </Navbar.Collapse>
       </Container>
