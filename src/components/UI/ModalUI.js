@@ -21,13 +21,13 @@ const ModalUI = (props) => {
         <Modal.Body>
           <ListGroup style={{ fontSize: "30px" }}>
             {typeof props.cartItems !== "string" &&
-              props.cartItems.map((users) => (
+              props.cartItems.map((items) => (
                 <ListGroupItem
-                  key={users.id}
+                  key={items.id}
                   as="li"
                   style={{ margin: "2px 10px" }}
                 >
-                  {users.name}
+                  {items.name}
                   <span style={{ float: "right" }}>
                     <Badge
                       style={{ margin: "2px 10px" }}
@@ -35,7 +35,7 @@ const ModalUI = (props) => {
                       pill
                       bg="success"
                     >
-                      ${users.price}{" "}
+                      ${items.price}{" "}
                     </Badge>
                     <Badge
                       bg="success"
@@ -43,7 +43,7 @@ const ModalUI = (props) => {
                       variant="primary"
                       pill
                     >
-                      {users.quantity}
+                      {items.quantity}
                     </Badge>{" "}
                     =
                     <Badge
@@ -52,12 +52,15 @@ const ModalUI = (props) => {
                       variant="primary"
                       pill
                     >
-                      ${users.price * users.quantity}
+                      ${items.price * items.quantity}
                     </Badge>
                   </span>
                 </ListGroupItem>
               ))}
-            <ListGroupItem as="li" style={{ margin: "2px 10px" }}>
+            <ListGroupItem
+              as="li"
+              style={{ margin: "2px 10px", fontWeight: "bold" }}
+            >
               Total
               <span style={{ float: "right" }}>
                 <Badge
@@ -65,6 +68,7 @@ const ModalUI = (props) => {
                   bg="danger"
                   variant="primary"
                   pill
+                  className="align-items-end"
                 >
                   ${sum}
                 </Badge>

@@ -1,4 +1,4 @@
-import { Button, Badge } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useState } from "react";
 import ModalUI from "../UI/ModalUI";
 const CartButton = (props) => {
@@ -11,7 +11,8 @@ const CartButton = (props) => {
     }
     return (
       <Button onClick={onClickHandler} variant="primary">
-        Cart <Badge bg="secondary">0</Badge>
+        Cart
+        {/* <Badge bg="secondary">0</Badge> */}
         <span className="visually-hidden"></span>
         <ModalUI
           cartItems={props.cartItems}
